@@ -83,7 +83,7 @@ button:focus-visible,.day:focus-visible{outline:2px solid var(--accent);outline-
 .xp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:20px;padding:18px 16px 20px;border-top:1px solid var(--line)}
 .xp figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
 .xp svg{width:100%;height:auto;display:block;border-radius:10px;aspect-ratio:16/7}
-.xp img.photo{width:100%;max-width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:10px}
+.xp img.photo{width:100%;max-width:320px;height:auto;display:block;border-radius:10px}
 .xp figcaption{font-size:12px;color:var(--muted)}
 .xp h3{font-size:18px}
 .xp .lede{color:var(--muted);font-size:14px;margin:4px 0 0}
@@ -171,19 +171,19 @@ footer a{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
 /* ---- site shell ---- */
-.wrap{padding-inline:16px;padding-block:8px 56px;gap:56px}
+.wrap{padding-inline:16px;padding-block:48px 56px;gap:56px}
 .block{scroll-margin-top:16px}
 .sechead{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
 .sechead h2{font-size:clamp(26px,4vw,36px);line-height:1.15}
 .lede{margin:0;color:var(--muted);max-width:60ch}
-.hero{background:#16211d;color:#f3f5f1}
+.hero{background-color:#16211d;background-image:linear-gradient(rgba(22,33,29,.80),rgba(22,33,29,.88)),url(images/coast-road.jpg);background-size:cover;background-position:center 60%;background-repeat:no-repeat;color:#f3f5f1}
 .topnav{max-width:1120px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 16px) 16px 16px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px}
 .brand{font-family:var(--f-display);font-size:20px;color:#f3f5f1;text-decoration:none}
 .navlinks{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14px;font-weight:600}
 .navlinks a{color:#d8e2dc;text-decoration:none}
 .navlinks a:hover,.brand:hover{color:#f0a43a}
 .navlinks a:focus-visible,.brand:focus-visible{outline:2px solid #f0a43a;outline-offset:3px;border-radius:4px}
-.herobody{max-width:1120px;margin:0 auto;padding:32px 16px 64px;display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.herobody{max-width:1120px;margin:0 auto;padding:72px 16px 112px;display:flex;flex-wrap:wrap;gap:40px;align-items:center}
 .herotext{flex:999 1 480px;min-width:0;display:flex;flex-direction:column;gap:18px}
 .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#f0a43a}
 .hero h1{font-size:clamp(42px,7vw,76px);line-height:1.02}
@@ -192,8 +192,8 @@ footer a{color:var(--muted)}
 .herofacts div{display:flex;flex-direction:column;gap:2px}
 .herofacts .v{font-family:var(--f-mono);font-size:22px;font-variant-numeric:tabular-nums}
 .herofacts .k{font-size:13px;color:#9fb0a8}
-.herofig{flex:1 1 300px;max-width:400px;margin:0;display:flex;flex-direction:column;gap:10px}
-.herofig img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%;border-radius:16px;display:block}
+.herofig{flex:1 1 100%;margin:0;display:flex;flex-direction:column;gap:10px}
+.herofig img{width:100%;height:auto;border-radius:16px;display:block}
 .herofig figcaption{font-size:13px;color:#9fb0a8}
 .flights{background:var(--surface);border-bottom:1px solid var(--line)}
 .flightsin{max-width:1120px;margin:0 auto;padding:20px 16px;display:flex;flex-wrap:wrap;gap:12px 36px;align-items:center}
