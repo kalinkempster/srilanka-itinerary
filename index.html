@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sri Lanka, 5–18 December</title>
+<meta name="description" content="Kal and Lara's Sri Lanka trip: route, day-by-day plan, budget tracker and booking checklist.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="hero">
+  <nav class="topnav" aria-label="Sections">
+    <a class="brand" href="#top">Kal &amp; Lara in Sri Lanka</a>
+    <div class="navlinks">
+      <a href="#route">Route</a>
+      <a href="#daysec">Day by day</a>
+      <a href="#budget">Budget</a>
+      <a href="#todo">Checklist</a>
+    </div>
+  </nav>
+  <div class="herobody" id="top">
+    <div class="herotext">
+      <div class="kicker">5–18 December 2026 · 12 nights · 2 travellers</div>
+      <h1>Rock, tea and sea.</h1>
+      <p>A night by the airport, three in the Cultural Triangle, two in Ella's hills and six on the south coast. Flights are booked; the rest is planned to stay under A$10,000.</p>
+      <div class="herofacts">
+        <div><span class="v">4</span><span class="k">bases</span></div>
+        <div><span class="v">6</span><span class="k">nights on the beach</span></div>
+        <div><span class="v" id="hdrTotal">~A$8,249</span><span class="k">projected for two</span></div>
+      </div>
+    </div>
+    <figure class="herofig">
+      <img src="images/lion-rock.jpg" alt="Sigiriya Lion Rock from above, the palace terraces on its summit rising out of the jungle mist" width="375" height="666">
+      <figcaption>Sigiriya, the 5th-century palace on the rock. We climb it at 7am on 07/12.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="flights" aria-label="Flights">
+  <div class="flightsin">
+    <div class="eyebrow">Flights · booked</div>
+    <div class="fl"><span class="mono">JQ5 · Sat 05/12 · 1:00pm</span><strong>Melbourne → Colombo</strong></div>
+    <div class="fl"><span class="mono">JQ6 · Thu 17/12 · 7:55pm</span><strong>Colombo → Melbourne</strong></div>
+    <div class="fl"><span class="mono">Paid</span><strong>A$2,584.02 + 71,739 pts</strong></div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section id="route" class="block">
+    <div class="sechead">
+      <div class="eyebrow">The route</div>
+      <h2>Four stops, three drives, one train.</h2>
+      <p class="lede">Tap a stop on the map to see where we stay and what we do there.</p>
+    </div>
+    <div class="main">
+      <div class="mapbox">
+        <svg id="map" viewBox="0 0 345 525" role="img" aria-label="Map of Sri Lanka showing the four bases, transfers and day trips"></svg>
+        <div class="legend">
+          <span><i style="border-color:var(--tea)"></i>Driver</span>
+          <span><i style="border-top-style:dotted;border-color:var(--train)"></i>Haputale → Ella train</span>
+          <span><i style="border-top-style:dotted;border-color:var(--muted)"></i>Day trip</span>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="dossier" id="dossier" aria-live="polite"></div>
+        <div class="nav">
+          <button id="prev" type="button">← Previous stop</button>
+          <button id="next" type="button">Next stop →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="daysec" class="block">
+    <div class="sechead">
+      <div class="eyebrow">Day by day</div>
+      <h2>Fourteen days.</h2>
+      <p class="lede">Open a day to see how it runs, hour by hour.</p>
+    </div>
+    <div class="dayctl">
+      <button type="button" id="expandAll">Open all days</button>
+      <button type="button" id="collapseAll">Close all</button>
+    </div>
+    <div class="days" id="days"></div>
+  </section>
+
+  <section class="lower block" id="budget">
+    <div class="card tracker" id="tracker">
+      <div class="trhead"><h2>Budget tracker</h2><span class="eyebrow">Cap A$10,000</span></div>
+      <p class="tnote" id="trkStatus" aria-live="polite">Saved in this browser. Use Export and Import to share with Lara.</p>
+      <div class="stats">
+        <div><div class="v mono" id="sCom">A$0</div><div class="k">Booked or paid</div></div>
+        <div><div class="v mono" id="sProj">A$0</div><div class="k">Projected total</div></div>
+        <div><div class="v mono" id="sLeft">A$0</div><div class="k">Left under the cap</div></div>
+      </div>
+      <div class="cap" aria-hidden="true"><span class="p" id="capProj"></span><span class="c" id="capCom"></span></div>
+      <div class="capscale mono"><span>A$0</span><span>5k</span><span>10k</span></div>
+      <div class="chead"><span>Category</span><span>Planned</span><span></span><span>Booked</span></div>
+      <div id="catRows" class="crows"></div>
+      <h3 class="sub">Expenses</h3>
+      <ul class="exp" id="exp"></ul>
+      <p class="tnote" id="expEmpty">No expenses logged yet.</p>
+      <form id="tForm" class="tform">
+        <label class="wide">What<input id="tItem" type="text" placeholder="e.g. Kumbukgaha Villa, 3 nights" autocomplete="off"></label>
+        <label>Amount (A$)<input id="tAmt" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></label>
+        <label>Category<select id="tCat"></select></label>
+        <label>Status<select id="tStatus"><option value="paid">Paid</option><option value="booked">Booked, pay later</option><option value="quote">Quote only</option></select></label>
+        <label>Date<input id="tDate" type="date"></label>
+        <label class="wide">Note<input id="tNote" type="text" placeholder="Optional" autocomplete="off"></label>
+        <button id="tAdd" type="submit">Add expense</button>
+      </form>
+      <div class="xfer">
+        <button type="button" id="tExport">Export data</button>
+        <label class="filebtn">Import data<input type="file" id="tImportFile" accept="application/json,.json"></label>
+      </div>
+      <p class="tnote">Projected total uses the planned midpoint for each category until real costs pass it. Quotes count toward the projection, not toward booked.</p>
+    </div>
+    <div class="card check" id="todo">
+      <h2>Checklist</h2>
+      <div id="checks"></div>
+      <form id="cForm" class="cform">
+        <label for="cItem" class="sr">Add a checklist item</label>
+        <input id="cItem" type="text" placeholder="Add an item, e.g. Pack reef-safe sunscreen" autocomplete="off">
+        <button type="submit">Add</button>
+      </form>
+      <p class="tnote">Ticks are saved in this browser.</p>
+    </div>
+  </section>
+
+  <footer>
+    Kal &amp; Lara · Sri Lanka, December 2026. Flights: Jetstar JQ5/JQ6, booked 12/10/2026. Prices checked October 2026 and will change; hotel prices for Negombo, Ella and the coast are estimates until booked.
+  </footer>
+</div>
+
+</body>
+</html>
